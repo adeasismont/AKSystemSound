@@ -146,7 +146,7 @@ static unsigned int sSoundsPlaying = 0;
 			// if we're done playing, release ourselves (retained in -play)
 			// and remove completed callback
 			AudioServicesRemoveSystemSoundCompletion(_soundID);
-			[self release];
+			[self autorelease];
 		}
 	}
 }
