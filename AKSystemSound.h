@@ -11,11 +11,17 @@
 	Play once:
 	[[AKSystemSound soundWithName:@"ping"] play];
 
-	Schedule:
-	soundID = [[AKSystemSound soundWithName:@"ping"] scheduleWithInterval:5];
+	Schedule repeated playback:
+	soundID = [[AKSystemSound soundWithName:@"ping"] scheduleRepeatWithInterval:5];
+	
+	Schedule playback in delta time:
+	soundID = [[AKSystemSound soundWithName:@"ping"] schedulePlayInInterval:5];
+	
+	Schedule playback at specified date:
+	soundID = [[AKSystemSound soundWithName:@"ping"] schedulePlayAtDate:date];
 
 	Unschedule:
-	[AKSystemSound cancelScheduledSoundWithID:soundID];
+	[AKSystemSound unscheduleSoundID:soundID];
 	soundID = AKSystemSoundInvalidID;
 
 	AKSystemSoundsWillPlay-/AKSystemSoundsDidPlayNotification
@@ -60,11 +66,14 @@ typedef NSInteger AKSystemSoundID;
 // play the sound manually once
 - (void)play;
 
-// schedule the sound to be played with a certain interval
-// use the AKSystemSoundID returned from scheduleWithInterval:
-// with cancelScheduledSoundWithID: to unschedule
-- (AKSystemSoundID)scheduleWithInterval:(NSTimeInterval)interval;
-+ (void)cancelScheduledSoundWithID:(AKSystemSoundID)soundID;
+// schedule a repeated playback with interval seconds
+- (AKSystemSoundID)scheduleRepeatWithInterval:(NSTimeInterval)interval;
+// schedule sound to be played in delta seconds
+- (AKSystemSoundID)schedulePlayInInterval:(NSTimeInterval)delta;
+// schedule sound to be played at date
+- (AKSystemSoundID)schedulePlayAtDate:(NSDate*)date;
+// unschedule soundID returned from -schedule...
++ (void)unscheduleSoundID:(AKSystemSoundID)soundID;
 
 // initializes a system sound and caches it
 + (AKSystemSound*)soundWithName:(NSString*)name;

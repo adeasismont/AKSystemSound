@@ -7,13 +7,17 @@ NSString *const AKSystemSoundsDidPlayNotification	= @"AKSystemSoundsDidPlayNotif
 NSString *const AKSystemSoundWillPlayNotification	= @"AKSystemSoundWillPlayNotification";
 NSString *const AKSystemSoundDidPlayNotification	= @"AKSystemSoundDidPlayNotification";
 
+// Internal keys
+NSString *const AKSystemSoundKey					= @"AKSystemSoundKey";
+NSString *const AKSystemSoundContinuesKey			= @"AKSystemSoundContinuesKey";
+
 // Callback declaration
 void AKSystemSoundCompleted (SystemSoundID ssID, void* clientData);
 
 // Private interface
 @interface AKSystemSound ()
 - (void)_soundCompleted;
-+ (AKSystemSoundID)_scheduleSound:(AKSystemSound*)sound interval:(NSTimeInterval)interval;
++ (AKSystemSoundID)_scheduleTimer:(NSTimer*)timer;
 + (void)_soundWillPlay:(AKSystemSound*)sound;
 + (void)_soundDidPlay:(AKSystemSound*)sound;
 @end
@@ -152,13 +156,78 @@ static unsigned int sSoundsPlaying = 0;
 }
 
 
-- (AKSystemSoundID)scheduleWithInterval:(NSTimeInterval)interval
+- (AKSystemSoundID)scheduleRepeatWithInterval:(NSTimeInterval)interval
 {
-	return [[self class] _scheduleSound:self interval:interval];
+	// the timer retains the sound (self) in the userInfo property (NSDictionary)
+	NSTimer *timer = [NSTimer timerWithTimeInterval:interval
+											 target:[self class]
+										   selector:@selector(_scheduledTimerFired:)
+										   userInfo:[NSDictionary dictionaryWithObjectsAndKeys:
+													 self,
+													 AKSystemSoundKey,
+													 [NSNumber numberWithBool:YES],
+													 AKSystemSoundContinuesKey,
+													 nil]
+											repeats:YES];
+	return [[self class] _scheduleTimer:timer];
+}
+
+- (AKSystemSoundID)schedulePlayInInterval:(NSTimeInterval)interval
+{
+	NSTimer *timer = [NSTimer timerWithTimeInterval:interval
+											 target:[self class]
+										   selector:@selector(_scheduledTimerFired:)
+										   userInfo:[NSDictionary dictionaryWithObjectsAndKeys:
+													 self,
+													 AKSystemSoundKey,
+													 [NSNumber numberWithBool:NO],
+													 AKSystemSoundContinuesKey,
+													 nil]
+											repeats:NO];
+	return [[self class] _scheduleTimer:timer];
+}
+
+- (AKSystemSoundID)schedulePlayAtDate:(NSDate*)date
+{
+	NSTimer *timer = [[[NSTimer alloc] initWithFireDate:date
+											  interval:0
+												target:[self class]
+											  selector:@selector(_scheduledTimerFired:)
+											   userInfo:[NSDictionary dictionaryWithObjectsAndKeys:
+														 self,
+														 AKSystemSoundKey,
+														 [NSNumber numberWithBool:NO],
+														 AKSystemSoundContinuesKey,
+														 nil]
+											   repeats:NO]
+					  autorelease];
+	return [[self class] _scheduleTimer:timer];
 }
 
 static NSMutableDictionary *sScheduledTimers = nil;
 static AKSystemSoundID sCurrentSystemSoundID = 0;
+
++ (AKSystemSoundID)_scheduleTimer:(NSTimer*)timer
+{
+	AKSystemSoundID soundID;
+	
+	@synchronized([AKSystemSound class])
+	{
+		// add 1 to the current system sound id counter
+		sCurrentSystemSoundID++;
+		soundID = sCurrentSystemSoundID;
+		
+		// add the timer to the schedule timers dictionary
+		if (sScheduledTimers == nil)
+			sScheduledTimers = [[NSMutableDictionary alloc] init];
+		[sScheduledTimers setObject:timer forKey:[NSNumber numberWithInt:soundID]];
+		
+		// add the timer to the main runloop
+		[[NSRunLoop mainRunLoop] addTimer:timer forMode:NSRunLoopCommonModes];
+	}
+	
+	return soundID;
+}
 
 + (AKSystemSoundID)_scheduleSound:(AKSystemSound*)sound interval:(NSTimeInterval)interval
 {
@@ -192,14 +261,29 @@ static AKSystemSoundID sCurrentSystemSoundID = 0;
 
 + (void)_scheduledTimerFired:(NSTimer*)timer
 {
-	if ([timer isValid])
-	{
-		AKSystemSound *sound = (AKSystemSound*)[timer userInfo];
+	AKSystemSound *sound = [[timer userInfo] objectForKey:AKSystemSoundKey];
+	BOOL shouldContinue = [[[timer userInfo] objectForKey:AKSystemSoundContinuesKey] boolValue];
+	
+	if (sound)
 		[sound play];
+	
+	if (!shouldContinue)
+	{
+		@synchronized([AKSystemSound class])
+		{
+			if ([timer isValid])
+			{
+				[timer invalidate];
+				
+				NSString *key = [[sScheduledTimers allKeysForObject:timer] lastObject];
+				if (key)
+					[self unscheduleSoundID:[key intValue]];
+			}
+		}
 	}
 }
 
-+ (void)cancelScheduledSoundWithID:(AKSystemSoundID)soundID
++ (void)unscheduleSoundID:(AKSystemSoundID)soundID
 {
 	if (soundID == AKSystemSoundInvalidID)
 		return;

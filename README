@@ -10,11 +10,17 @@ Usage
 Play once:
 [[AKSystemSound soundWithName:@"ping"] play];
 
-Schedule:
-soundID = [[AKSystemSound soundWithName:@"ping"] scheduleWithInterval:5];
+Schedule repeated playback:
+soundID = [[AKSystemSound soundWithName:@"ping"] scheduleRepeatWithInterval:5];
+
+Schedule playback in delta time:
+soundID = [[AKSystemSound soundWithName:@"ping"] schedulePlayInInterval:5];
+
+Schedule playback at specified date:
+soundID = [[AKSystemSound soundWithName:@"ping"] schedulePlayAtDate:date];
 
 Unschedule:
-[AKSystemSound cancelScheduledSoundWithID:soundID];
+[AKSystemSound unscheduleSoundID:soundID];
 soundID = AKSystemSoundInvalidID;
 
 AKSystemSoundsWillPlay-/AKSystemSoundsDidPlayNotification
