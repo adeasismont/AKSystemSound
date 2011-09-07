@@ -1,0 +1,31 @@
+AKSystemSound
+
+Simplifies playing caf audio files using AudioServicesPlaySystemSound.
+Audio files can also be scheduled to be played with a specified interval.
+
+Convert files to caf using afconvert:
+afconvert -f caff -d LEI16 [input] out.caf
+
+Usage
+Play once:
+[[AKSystemSound soundWithName:@"ping"] play];
+
+Schedule:
+soundID = [[AKSystemSound soundWithName:@"ping"] scheduleWithInterval:5];
+
+Unschedule:
+[AKSystemSound cancelScheduledSoundWithID:soundID];
+soundID = AKSystemSoundInvalidID;
+
+AKSystemSoundsWillPlay-/AKSystemSoundsDidPlayNotification
+Sent before and after a set of sounds are played.
+Good to have if you have any other audio playback (AudioQueue etc)
+and need to temporarily lower the output volume from that.
+
+AKSystemSoundWillPlay-/AKSystemSoundDidPlayNotification
+Sent before and after each sound is played.
+
+
+Public domain, free use.
+Created by Anton Kiland 2011
+anton@kiland.se
