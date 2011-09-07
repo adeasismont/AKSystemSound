@@ -138,6 +138,8 @@ static unsigned int sSoundsPlaying = 0;
 {
 	@synchronized(self)
 	{
+		[[self class] _soundDidPlay:self];
+		
 		_playing--;
 		if (_playing == 0)
 		{
@@ -146,8 +148,6 @@ static unsigned int sSoundsPlaying = 0;
 			AudioServicesRemoveSystemSoundCompletion(_soundID);
 			[self release];
 		}
-		
-		[[self class] _soundDidPlay:self];
 	}
 }
 
