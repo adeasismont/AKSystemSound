@@ -12,31 +12,37 @@ These audio files have to be in the CAF-format.
 
 
 + convert files to CAF using afconvert
+
 ````
 afconvert -f caff -d LEI16 [input] out.caf
 ````
 
 + play once
+
 ````objective-c
 [[AKSystemSound soundWithName:@"ping"] play];
 ````
 
 + schedule repeated playback
+
 ````objective-c
 soundID = [[AKSystemSound soundWithName:@"ping"] scheduleRepeatWithInterval:5];
 ````
 
 + schedule playback in delta time
+
 ````objective-c
 soundID = [[AKSystemSound soundWithName:@"ping"] schedulePlayInInterval:5];
 ````
 
 + schedule playback at specified date
+
 ````objective-c
 soundID = [[AKSystemSound soundWithName:@"ping"] schedulePlayAtDate:date];
 ````
 
 + unschedule
+
 ````objective-c
 [AKSystemSound unscheduleSoundID:soundID];
 soundID = AKSystemSoundInvalidID;
@@ -46,13 +52,11 @@ Notifications
 =============
 
 + AKSystemSoundsWillPlay-/AKSystemSoundsDidPlayNotification
-
 Sent before and after a set of sounds are played.
 Good to have if you have any other audio playback (AudioQueue etc)
 and need to temporarily lower the output volume from that.
 
 + AKSystemSoundWillPlay-/AKSystemSoundDidPlayNotification
-
 Sent before and after each sound is played.
 
 Licence
