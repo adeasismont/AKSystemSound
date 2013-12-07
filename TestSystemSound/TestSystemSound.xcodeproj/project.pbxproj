@@ -1,0 +1,330 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AB46810D1852052E00EB1035 /* AKSystemSound.m in Sources */ = {isa = PBXBuildFile; fileRef = AB46810C1852052E00EB1035 /* AKSystemSound.m */; };
+		AB9F02701853469400E08652 /* Ship_Brass_Bell.caf in Resources */ = {isa = PBXBuildFile; fileRef = AB9F026F1853412F00E08652 /* Ship_Brass_Bell.caf */; };
+		ABF31A7B1850AEDD00FF1CB5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABF31A7A1850AEDD00FF1CB5 /* Foundation.framework */; };
+		ABF31A7D1850AEDD00FF1CB5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABF31A7C1850AEDD00FF1CB5 /* CoreGraphics.framework */; };
+		ABF31A7F1850AEDD00FF1CB5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABF31A7E1850AEDD00FF1CB5 /* UIKit.framework */; };
+		ABF31A851850AEDD00FF1CB5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = ABF31A831850AEDD00FF1CB5 /* InfoPlist.strings */; };
+		ABF31A871850AEDD00FF1CB5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = ABF31A861850AEDD00FF1CB5 /* main.m */; };
+		ABF31A8B1850AEDD00FF1CB5 /* IVRAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = ABF31A8A1850AEDD00FF1CB5 /* IVRAppDelegate.m */; };
+		ABF31A8E1850AEDD00FF1CB5 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABF31A8C1850AEDD00FF1CB5 /* Main_iPhone.storyboard */; };
+		ABF31A941850AEDD00FF1CB5 /* IVRViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABF31A931850AEDD00FF1CB5 /* IVRViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		AB46810B1852052E00EB1035 /* AKSystemSound.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AKSystemSound.h; path = ../AKSystemSound.h; sourceTree = "<group>"; };
+		AB46810C1852052E00EB1035 /* AKSystemSound.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AKSystemSound.m; path = ../AKSystemSound.m; sourceTree = "<group>"; };
+		AB9F026F1853412F00E08652 /* Ship_Brass_Bell.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Ship_Brass_Bell.caf; sourceTree = "<group>"; };
+		ABF31A771850AEDD00FF1CB5 /* TestSystemSound.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestSystemSound.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		ABF31A7A1850AEDD00FF1CB5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		ABF31A7C1850AEDD00FF1CB5 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		ABF31A7E1850AEDD00FF1CB5 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		ABF31A821850AEDD00FF1CB5 /* TestSystemSound-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TestSystemSound-Info.plist"; sourceTree = "<group>"; };
+		ABF31A841850AEDD00FF1CB5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		ABF31A861850AEDD00FF1CB5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		ABF31A881850AEDD00FF1CB5 /* TestSystemSound-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TestSystemSound-Prefix.pch"; sourceTree = "<group>"; };
+		ABF31A891850AEDD00FF1CB5 /* IVRAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IVRAppDelegate.h; sourceTree = "<group>"; };
+		ABF31A8A1850AEDD00FF1CB5 /* IVRAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IVRAppDelegate.m; sourceTree = "<group>"; };
+		ABF31A8D1850AEDD00FF1CB5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
+		ABF31A921850AEDD00FF1CB5 /* IVRViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IVRViewController.h; sourceTree = "<group>"; };
+		ABF31A931850AEDD00FF1CB5 /* IVRViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IVRViewController.m; sourceTree = "<group>"; };
+		ABF31A9C1850AEDD00FF1CB5 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		ABF31A741850AEDD00FF1CB5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ABF31A7D1850AEDD00FF1CB5 /* CoreGraphics.framework in Frameworks */,
+				ABF31A7F1850AEDD00FF1CB5 /* UIKit.framework in Frameworks */,
+				ABF31A7B1850AEDD00FF1CB5 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		ABF31A6E1850AEDD00FF1CB5 = {
+			isa = PBXGroup;
+			children = (
+				AB9F026F1853412F00E08652 /* Ship_Brass_Bell.caf */,
+				AB46810B1852052E00EB1035 /* AKSystemSound.h */,
+				AB46810C1852052E00EB1035 /* AKSystemSound.m */,
+				ABF31A801850AEDD00FF1CB5 /* TestSystemSound */,
+				ABF31A791850AEDD00FF1CB5 /* Frameworks */,
+				ABF31A781850AEDD00FF1CB5 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		ABF31A781850AEDD00FF1CB5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				ABF31A771850AEDD00FF1CB5 /* TestSystemSound.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		ABF31A791850AEDD00FF1CB5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				ABF31A7A1850AEDD00FF1CB5 /* Foundation.framework */,
+				ABF31A7C1850AEDD00FF1CB5 /* CoreGraphics.framework */,
+				ABF31A7E1850AEDD00FF1CB5 /* UIKit.framework */,
+				ABF31A9C1850AEDD00FF1CB5 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		ABF31A801850AEDD00FF1CB5 /* TestSystemSound */ = {
+			isa = PBXGroup;
+			children = (
+				ABF31A891850AEDD00FF1CB5 /* IVRAppDelegate.h */,
+				ABF31A8A1850AEDD00FF1CB5 /* IVRAppDelegate.m */,
+				ABF31A8C1850AEDD00FF1CB5 /* Main_iPhone.storyboard */,
+				ABF31A921850AEDD00FF1CB5 /* IVRViewController.h */,
+				ABF31A931850AEDD00FF1CB5 /* IVRViewController.m */,
+				ABF31A811850AEDD00FF1CB5 /* Supporting Files */,
+			);
+			path = TestSystemSound;
+			sourceTree = "<group>";
+		};
+		ABF31A811850AEDD00FF1CB5 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				ABF31A821850AEDD00FF1CB5 /* TestSystemSound-Info.plist */,
+				ABF31A831850AEDD00FF1CB5 /* InfoPlist.strings */,
+				ABF31A861850AEDD00FF1CB5 /* main.m */,
+				ABF31A881850AEDD00FF1CB5 /* TestSystemSound-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		ABF31A761850AEDD00FF1CB5 /* TestSystemSound */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ABF31AAC1850AEDD00FF1CB5 /* Build configuration list for PBXNativeTarget "TestSystemSound" */;
+			buildPhases = (
+				ABF31A731850AEDD00FF1CB5 /* Sources */,
+				ABF31A741850AEDD00FF1CB5 /* Frameworks */,
+				ABF31A751850AEDD00FF1CB5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TestSystemSound;
+			productName = TestLocalNotify;
+			productReference = ABF31A771850AEDD00FF1CB5 /* TestSystemSound.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		ABF31A6F1850AEDD00FF1CB5 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = IVR;
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = "Ivan Rublev http://ivanrublev.me";
+			};
+			buildConfigurationList = ABF31A721850AEDD00FF1CB5 /* Build configuration list for PBXProject "TestSystemSound" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = ABF31A6E1850AEDD00FF1CB5;
+			productRefGroup = ABF31A781850AEDD00FF1CB5 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				ABF31A761850AEDD00FF1CB5 /* TestSystemSound */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		ABF31A751850AEDD00FF1CB5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AB9F02701853469400E08652 /* Ship_Brass_Bell.caf in Resources */,
+				ABF31A8E1850AEDD00FF1CB5 /* Main_iPhone.storyboard in Resources */,
+				ABF31A851850AEDD00FF1CB5 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		ABF31A731850AEDD00FF1CB5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AB46810D1852052E00EB1035 /* AKSystemSound.m in Sources */,
+				ABF31A941850AEDD00FF1CB5 /* IVRViewController.m in Sources */,
+				ABF31A8B1850AEDD00FF1CB5 /* IVRAppDelegate.m in Sources */,
+				ABF31A871850AEDD00FF1CB5 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		ABF31A831850AEDD00FF1CB5 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				ABF31A841850AEDD00FF1CB5 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		ABF31A8C1850AEDD00FF1CB5 /* Main_iPhone.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				ABF31A8D1850AEDD00FF1CB5 /* Base */,
+			);
+			name = Main_iPhone.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		ABF31AAA1850AEDD00FF1CB5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		ABF31AAB1850AEDD00FF1CB5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		ABF31AAD1850AEDD00FF1CB5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TestSystemSound/TestSystemSound-Prefix.pch";
+				INFOPLIST_FILE = "TestSystemSound/TestSystemSound-Info.plist";
+				PRODUCT_NAME = TestSystemSound;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		ABF31AAE1850AEDD00FF1CB5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TestSystemSound/TestSystemSound-Prefix.pch";
+				INFOPLIST_FILE = "TestSystemSound/TestSystemSound-Info.plist";
+				PRODUCT_NAME = TestSystemSound;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		ABF31A721850AEDD00FF1CB5 /* Build configuration list for PBXProject "TestSystemSound" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ABF31AAA1850AEDD00FF1CB5 /* Debug */,
+				ABF31AAB1850AEDD00FF1CB5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ABF31AAC1850AEDD00FF1CB5 /* Build configuration list for PBXNativeTarget "TestSystemSound" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ABF31AAD1850AEDD00FF1CB5 /* Debug */,
+				ABF31AAE1850AEDD00FF1CB5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = ABF31A6F1850AEDD00FF1CB5 /* Project object */;
+}
