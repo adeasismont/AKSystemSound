@@ -109,4 +109,5 @@ typedef enum eAKSystemSoundPlayFunction : NSUInteger {
 // it leads to deallocation of object and stop of playing.
 + (BOOL)freeSoundWithName:(NSString*)name;
 
++ (BOOL)isAnySoundPlaying;
 @end

@@ -51,6 +51,13 @@ void AKSystemSoundCompleted (SystemSoundID ssID, void* clientData)
 	NSString *soundPath = [[NSBundle mainBundle]
 						   pathForResource:name
 						   ofType:([[name pathExtension] length] ? nil : @"caf")];
+    if (!soundPath) { // think that name is full path
+        soundPath = name;
+        if (![[NSFileManager defaultManager] fileExistsAtPath:soundPath]) { // well then it's releative to documents directory
+            NSString* documentsDirectory = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
+            soundPath = [documentsDirectory stringByAppendingPathComponent:name];
+        }
+    }
 	self = [self initWithPath:soundPath];
 	return self;
 }
@@ -189,6 +196,14 @@ static unsigned int sSoundsPlaying = 0;
 				postNotificationName:AKSystemSoundsDidPlayNotification
 				object:nil];
 	}
+}
+
++ (BOOL)isAnySoundPlaying
+{
+    @synchronized([AKSystemSound class])
+	{
+        return sSoundsPlaying != 0;
+    }
 }
 
 - (SystemSoundID)_soundID
