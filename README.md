@@ -5,11 +5,23 @@ Simplifies playing caf audio files using AudioServicesPlaySystemSound.
 Audio files can also be scheduled to be played with a specified interval.
 
 
-Requires ARC
-=====
+## Features of this fork
 
-In non-arc projects set `-fobjc-arc` compiler flag against AKSystemSound.m file in project's settings.
+The main feature is that the project is translated to ARC.
 
+### Methods are added
+
++ Returns YES if any sound that was passed to this class is playing now.
+
+````objective-c
+[AKSystemSound isAnySoundPlaying];
+````
+
++ Stop playing on deallocation of corresponding object (unscheduled if was):
+
+````objective-c
+[AKSystemSound freeSoundWithName:@"ping"];
+````
 
 Usage
 =====
@@ -53,11 +65,6 @@ soundID = [[AKSystemSound soundWithName:@"ping"] schedulePlayAtDate:date];
 ````objective-c
 [AKSystemSound unscheduleSoundID:soundID];
 soundID = AKSystemSoundInvalidID;
-````
-
-+ Unschedule, and stop playing on deallocation of corresponding object:
-````
-[AKSystemSound freeSoundWithName:@"ping"];
 ````
 
 Notifications
